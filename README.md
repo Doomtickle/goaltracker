@@ -1,4 +1,4 @@
-# goaltracker
+# Goal Tracker
 Proof of concept for a simple goal tracking API
 
 ## Data Model
