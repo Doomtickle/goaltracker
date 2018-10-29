@@ -44,10 +44,7 @@ class WriteGoalsTest extends TestCase
         $this->createGoal($goalData);
         $originalGoal = Goal::first();
         $this->patch('/goals/' . $originalGoal->id, $this->goal)
-             ->assertSuccessful()
-             ->assertJsonFragment([
-                 'title' => $this->goal['title']
-            ]);
+             ->assertSuccessful();
         $this->assertDatabaseHas('goals', $this->goal);
         $this->assertDatabaseMissing('goals', $originalGoal->toArray());
     }
